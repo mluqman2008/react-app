@@ -1,0 +1,66 @@
+(1) Create account and repository on Github
+(2)Install git gui or gitbash
+(3)First set the following with gitbash commandline
+
+git config --global user.email "your email"
+git config --global user.name "Your name"
+
+
+(4) Go to directory where you want to create your project as
+
+cd d:\dir\dir
+
+(5) Crate dirctory for your project 
+
+mkdir your-repo
+cd   your-repo
+git init
+
+(6) Add or update and List remote path command
+Add : git remote add origin https://github.com/username/{projectName}.git
+update : git remote set-url origin https://github.com/username/{projectName}.git
+list : git remote -v
+
+(7) commit update files
+
+git commit -a -m "My commit message"
+
+(8) commit update files and new files
+
+git add -A
+git commit -a -m "My commit message"
+
+(9) Push Files
+
+git push -u origin master
+
+(10) Pull files
+
+git pull -u origin master
+
+Create branches from master
+
+(11)First, you create your branch locally:
+
+mkdir branch-name
+
+Where <remote-name> is typically origin, the name which git gives to the remote you cloned from. Your colleagues would then just pull that branch, and it's automatically created locally.
+
+git checkout -b your_branch
+
+git push <remote-name> <branch-name>
+
+Note however that formally, the format is:
+
+git push <remote-name> <local-branch-name>:<remote-branch-name>
+
+
+
+http://superuser.com/questions/276355/how-to-setup-own-git-server-whats-bare-non-bare-repos
+
+http://stackoverflow.com/questions/1519006/how-do-you-create-a-remote-git-branch
+
+git config --global push.default simple
+
+https://www.kernel.org/pub/software/scm/git/docs/v1.7.3/githooks.html
+http://markdotto.com/2011/11/02/how-to-deploy-sites-via-github/
