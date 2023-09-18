@@ -5,9 +5,14 @@ const port 		= 5001;
 const app = express();
 app.use(express.json()); //body parser
 
+const API_PATH = '/api';
+
 //Available Routes
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/notes', require('./routes/notes'));
+const authRoute = require('./routes/auth');
+app.use(API_PATH +'/auth', authRoute);
+
+//app.use('/api/auth', require('./routes/auth'));
+app.use(API_PATH +'/notes', require('./routes/notes'));
 
 connectDB(); //connect to database
 
