@@ -7,13 +7,15 @@ const JWT_SECRET	= 'LuqmanIsAGoodBoy$123%';
 
 const { body, query, matchedData, validationResult } = require('express-validator');
 
-const User		= require('../models/Users')
+const User			= require('../models/Users');
+const fetchuser		= require('../middleware/fetchuser');
+
 // ROUTE 1: Create a User using: POST "/api/auth/createuser". No login required
 router.post('/createuser', [
 	body('name', 'Enter a valid name').isLength({ min: 3 }),
 	body('email', 'Enter a valid email').isEmail(),
 	body('password', 'Password must be atleast 5 characters').isLength({ min: 5 }),
-], async (req, res) => {
+	], async (req, res) => {
 	// If there are errors, return Bad request and the errors
 	const errors = validationResult(req);
 	if (!errors.isEmpty()) {
@@ -55,7 +57,7 @@ router.post('/createuser', [
 router.route('/login').post([
 	body('email', 'Enter a valid email').isEmail(),
 	body('password', 'Password cannot be blank').exists(),
-], async (req, res) => {
+	], async (req, res) => {
 	let success = false;
 	// If there are errors, return Bad request and the errors
 	const errors = validationResult(req);
@@ -91,6 +93,20 @@ router.route('/login').post([
 		res.status(500).send("Internal Server Error");
 	}
 });
+
+// ROUTE 3: Get loggedin User Details using: POST "/api/auth/getuser". Login required
+router.route('/getuser').post(fetchuser, async (req, res) => {
+	try{
+		userId = req.user.id;
+		const user = await User.findById(userId).select('-password');
+		res.send(user);
+	} catch (error) {
+		console.error(error.message);
+		res.status(500).send("Internal Server Error");
+	}	
+});
+
+
 
 module.exports = router
 

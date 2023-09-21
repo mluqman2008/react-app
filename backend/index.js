@@ -1,6 +1,6 @@
 const express	= require('express');
 const connectDB = require('./db');
-const port 		= 5001;
+const port 		= 5000;
 // express
 const app = express();
 app.use(express.json()); //body parser
