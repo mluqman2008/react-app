@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import React from "react";
 
 //import ReactDOM from 'react-dom';
@@ -17,10 +17,12 @@ import Image from 'react-bootstrap/Image';
 
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 
+//import NoteState from './context/notes/NoteState';
+//export const UserContext = React.createContext();
+
 import Home from './components/home.component';
 import About from './components/about.component';
 import CreateStudent from './components/create-student.component';
-
 
 function App() {
 	return (
@@ -62,7 +64,6 @@ function App() {
 						<Route path="/about" element={<About />} />
 						<Route path="/create-user" element={<CreateStudent />} />
 						
-						
 						<Route
 							path="*"
 							element={
@@ -71,10 +72,7 @@ function App() {
 							  </div>
 							}
 						/>
-					</Routes>
-					
-					
-					
+					</Routes>					
 				</header>
 			</Router>
 			
