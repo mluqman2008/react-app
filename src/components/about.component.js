@@ -4,17 +4,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-//import { useContext, useEffect } from 'react';
-//import noteContext from '../context/notes/noteContext';
 //import axios from 'axios';
 
+
 export default class About extends Component {
-	/*const a = useContext(noteContext);
-    useEffect(() => {
-        a.update();
-        // eslint-disable-next-line
-    }, [])*/
-	
 	state = {
       name: '',
       email: '',

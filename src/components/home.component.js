@@ -1,9 +1,3 @@
-import React, { Component } from "react";
-
-//import ReactDOM from 'react-dom';
-
-//import './App.css';
-//import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container';
@@ -14,15 +8,15 @@ import Image from 'react-bootstrap/Image';
 import Card from 'react-bootstrap/Card';
 //import axios from 'axios';
 
-export default class About extends Component {
-	
-	state = {
+//export default class About extends Component {
+export const Home = () => {
+	/*state = {
       name: '',
       email: '',
       rollno: ''
-    }
+    }*/
 
-  render() {
+  //render() {
     return (<main>
 				<Container>
 					<Row className="px-4 my-5" >
@@ -30,8 +24,8 @@ export default class About extends Component {
 							<Image src="http://picsum.photos/900/400" fluid rounded className="" />
 						</Col>
 						<Col sm={4}>
-							<h1 class="font-weight-light">Tagline</h1>
-							<p class="mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&acute;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+							<h1 className="font-weight-light">Tagline</h1>
+							<p className="mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&acute;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 							<Button variant="outline-primary">Call to Action</Button>{' '}
 						</Col>
 					</Row>
@@ -76,5 +70,5 @@ export default class About extends Component {
 					<Row></Row>
 				</Container>
 			</main>);
-  }
+  //}
 }
