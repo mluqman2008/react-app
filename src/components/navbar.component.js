@@ -32,6 +32,7 @@ const NavbarTop = () => {
 							<Link exact="true" to={'/home'} className={`nav-link ${location.pathname==="/home"? "active": ""}`}>Home</Link>
 							<Link exact="true" to={'/about'} className={`nav-link ${location.pathname==="/about"? "active": ""}`}>About</Link>
 							<Link exact="true" to={'/create-user'} className={`nav-link ${location.pathname==="/create-user"? "active": ""}`}>Create User</Link>
+							<Link exact="true" to={'/form'} className={`nav-link ${location.pathname==="/form"? "active": ""}`}>View Books</Link>
 							
 							<Nav.Link href="#link">Link</Nav.Link>
 							<NavDropdown title="Dropdown" id="basic-nav-dropdown">
